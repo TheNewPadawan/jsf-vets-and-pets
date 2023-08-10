@@ -15,6 +15,7 @@
 	<character.encoding>UTF-8</character.encoding>
 	<project.build.sourceEncoding>${character.encoding}</project.build.sourceEncoding>
 	<project.reporting.outputEncoding>${character.encoding}</project.reporting.outputEncoding>
+	<endorsed.dir>${project.build.directory}/endorsed</endorsed.dir>
 	<lombok.version>1.18.20</lombok.version>
 	<mapstruct.version>1.4.2.Final</mapstruct.version>
 	<combo.lombok-mapstruct.version>0.2.0</combo.lombok-mapstruct.version>
@@ -61,5 +62,52 @@
 
   <build>
     <finalName>pets-and-vets</finalName>
+    <plugins>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-compiler-plugin</artifactId>
+            <version>3.1</version>
+            <configuration>
+                <source>1.7</source>
+                <target>1.7</target>
+                <compilerArguments>
+                    <endorseddirs>${endorsed.dir}</endorseddirs>
+                </compilerArguments>
+            </configuration>
+        </plugin>
+        <plugin>
+            <groupId>org.apache.maven.plugins</groupId>
+            <artifactId>maven-war-plugin</artifactId>
+            <version>2.3</version>
+            <configuration>
+                <failOnMissingWebXml>false</failOnMissingWebXml>
+            </configuration>
+        </plugin>
+	    <plugin>
+	        <groupId>org.apache.maven.plugins</groupId>
+	        <artifactId>maven-dependency-plugin</artifactId>
+	        <version>2.6</version>
+	        <executions>
+	            <execution>
+	                <phase>validate</phase>
+	                <goals>
+	                    <goal>copy</goal>
+	                </goals>
+	                <configuration>
+	                    <outputDirectory>${endorsed.dir}</outputDirectory>
+	                    <silent>true</silent>
+	                    <artifactItems>
+	                        <artifactItem>
+	                            <groupId>javax</groupId>
+	                            <artifactId>javaee-endorsed-api</artifactId>
+	                            <version>7.0</version>
+	                            <type>jar</type>
+	                        </artifactItem>
+	                    </artifactItems>
+	                </configuration>
+	            </execution>
+	        </executions>
+	    </plugin>				
+    </plugins>
   </build>
 </project>

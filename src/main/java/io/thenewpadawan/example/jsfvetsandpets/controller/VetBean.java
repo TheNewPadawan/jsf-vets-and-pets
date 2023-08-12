@@ -9,7 +9,6 @@ import javax.faces.bean.SessionScoped;
 @SessionScoped
 public class VetBean implements Serializable {
 	private static final long serialVersionUID = 4209675487790199042L;
-
 	private String vetBeanTest = "vetBeanTest";
 	
 	public String getVetBeanTest(){

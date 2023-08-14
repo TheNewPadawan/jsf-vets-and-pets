@@ -1,27 +1,23 @@
 package io.thenewpadawan.example.jsfvetsandpets.model;
 
-import lombok.AccessLevel;
+import java.util.Date;
+
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.NonNull;
 import lombok.RequiredArgsConstructor;
-import lombok.Setter;
 
-@Data
+@Data 
 @NoArgsConstructor
 @RequiredArgsConstructor
 @AllArgsConstructor
-public class Pet {
+public class Vet {
 	@NonNull
-	private String name;
+	private String firstname;
 	@NonNull
-	private String breed;
-//	@Setter(value = AccessLevel.NONE)
-	private int age = 0;
-	private boolean domestic = true;
-		
-	public void growingOld() {
-		age++;
-	}
+	private String lastname;
+	@NonNull
+	private String fiscalCode;
+	private Date birthday;
 }

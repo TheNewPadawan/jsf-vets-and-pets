@@ -5,6 +5,7 @@ import java.io.Serializable;
 import javax.faces.bean.ManagedBean;
 import javax.faces.bean.SessionScoped;
 
+import io.thenewpadawan.example.jsfvetsandpets.mapper.PetMapper;
 import io.thenewpadawan.example.jsfvetsandpets.model.Pet;
 
 @ManagedBean(name = "pet")
@@ -13,6 +14,11 @@ public class PetBean implements Serializable{
 	private static final long serialVersionUID = -4946871615482319785L;
 	private String petBeanTest = "petBeanTest";
 	
+	public PetBean() {
+		Pet pet = new Pet("alan", "cane", 0, true);
+		petBeanTest = PetMapper.INSTANCE.entity(pet).toString();
+	}
+	
 	public String getPetBeanTest() {
 		return petBeanTest;
 	}
@@ -20,5 +26,4 @@ public class PetBean implements Serializable{
 	public void setPetBeanTest(String petBeanTest) {
 		this.petBeanTest = petBeanTest;
 	}
-
 }

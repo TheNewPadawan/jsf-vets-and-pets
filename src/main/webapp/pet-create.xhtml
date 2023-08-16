@@ -1,0 +1,61 @@
+<?xml version='1.0' encoding='UTF-8' ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "https://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="https://www.w3.org/1999/xhtml"
+	  xmlns:h="http://xmlns.jcp.org/jsf/html"
+	  xmlns:f="http://xmlns.jcp.org/jsf/core">
+	  <!--xmlns:h="https://java.sun.com/jsf/html"-->
+<h:head>
+	<title>Vets &#38; Pets</title>
+</h:head>
+<h:body>
+	<h:form>
+    	<h2>Pet Information System</h2>
+       	<table>
+	       	<tr>
+		        <td>
+		        	<h:outputLabel for="pet-name">Pet Name</h:outputLabel>
+		        </td>
+		        <td>
+		            <h:inputText
+		                         value="#{petbean.dto.name}"
+		                         required="true"/>
+		            <!--<h:message for="pet-name" style="color: red"/>-->
+		        </td>
+	     	</tr>
+<!-- 	     	<tr> -->
+<!-- 		        <td>Pet Breed:</td> -->
+<!-- 		        <td> -->
+<!-- 		            <h:inputText label="Pet Breed" -->
+<!-- 		                         id="pet-breed" -->
+<!-- 		                         value="#{petbean.dto.breed}" -->
+<!-- 		                         required="true"/> -->
+<!-- 		            <h:message for="pet-breed" style="color: red"/> -->
+<!-- 		        </td> -->
+<!--      		</tr>	     		 -->
+<!-- 	     	<tr> -->
+<!-- 		        <td>Pet old:</td> -->
+<!-- 		        <td> -->
+<!-- 		            <h:inputText label="Pet old" -->
+<!-- 		                         id="pet-old" -->
+<!-- 		                         value="#{petbean.dto.old}" -->
+<!-- 		                         required="true"/> -->
+<!-- 		            <h:message for="pet-old" style="color: red"/> -->
+<!-- 		        </td> -->
+<!-- 	     	</tr>	     		 -->
+<!-- 	     	<tr> -->
+<!-- 		        <td>Pet Wild:</td> -->
+<!-- 		        <td> -->
+<!-- 					<h:selectOneRadio label="Wild" -->
+<!-- 		                              id="pet-wild" -->
+<!--                                       value="#{petbean.dto.wild}" -->
+<!-- 		                              required="true"> -->
+<!-- 						<f:selectItem itemLabel="Domestic" itemValue="domestic" /> -->
+<!-- 						<f:selectItem itemLabel="Wild" itemValue="wild" /> -->
+<!-- 					</h:selectOneRadio> -->
+<!-- 		        	<h:message for="pet-wild" style="color: red"/>              -->
+<!-- 		        </td> -->
+<!-- 	     	</tr> -->
+   		</table>
+    </h:form> 
+</h:body>
+</html>

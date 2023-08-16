@@ -8,4 +8,5 @@ public class PetDTO {
 	private String breed;
 	private Integer old;
 	private Boolean wild;
+//	private String gender;
 }

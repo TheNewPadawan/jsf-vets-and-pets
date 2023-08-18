@@ -7,7 +7,6 @@ import io.thenewpadawan.example.jsfvetsandpets.dto.PetDTO;
 import io.thenewpadawan.example.jsfvetsandpets.entity.PetEntity;
 import io.thenewpadawan.example.jsfvetsandpets.model.Pet;
 
-
 @Mapper//(componentModel = "spring")
 public interface PetMapper {
 	PetMapper INSTANCE = Mappers.getMapper(PetMapper.class);
@@ -39,7 +38,7 @@ public interface PetMapper {
 		return entity(model(dto));
 	}
 	
-	default PetDTO dto(PetEntity dto) {
-		return dto(model(dto));
+	default PetDTO dto(PetEntity entity) {
+		return dto(model(entity));
 	}
 }

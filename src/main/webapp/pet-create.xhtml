@@ -16,46 +16,53 @@
 		        	<h:outputLabel for="pet-name">Pet Name</h:outputLabel>
 		        </td>
 		        <td>
-		            <h:inputText
+		            <h:inputText id="pet-name"
 		                         value="#{petbean.dto.name}"
 		                         required="true"/>
-		            <!--<h:message for="pet-name" style="color: red"/>-->
+		            <h:message for="pet-name" style="color: red"/>
 		        </td>
 	     	</tr>
-<!-- 	     	<tr> -->
-<!-- 		        <td>Pet Breed:</td> -->
-<!-- 		        <td> -->
-<!-- 		            <h:inputText label="Pet Breed" -->
-<!-- 		                         id="pet-breed" -->
-<!-- 		                         value="#{petbean.dto.breed}" -->
-<!-- 		                         required="true"/> -->
-<!-- 		            <h:message for="pet-breed" style="color: red"/> -->
-<!-- 		        </td> -->
-<!--      		</tr>	     		 -->
-<!-- 	     	<tr> -->
-<!-- 		        <td>Pet old:</td> -->
-<!-- 		        <td> -->
-<!-- 		            <h:inputText label="Pet old" -->
-<!-- 		                         id="pet-old" -->
-<!-- 		                         value="#{petbean.dto.old}" -->
-<!-- 		                         required="true"/> -->
-<!-- 		            <h:message for="pet-old" style="color: red"/> -->
-<!-- 		        </td> -->
-<!-- 	     	</tr>	     		 -->
-<!-- 	     	<tr> -->
-<!-- 		        <td>Pet Wild:</td> -->
-<!-- 		        <td> -->
-<!-- 					<h:selectOneRadio label="Wild" -->
-<!-- 		                              id="pet-wild" -->
-<!--                                       value="#{petbean.dto.wild}" -->
-<!-- 		                              required="true"> -->
-<!-- 						<f:selectItem itemLabel="Domestic" itemValue="domestic" /> -->
-<!-- 						<f:selectItem itemLabel="Wild" itemValue="wild" /> -->
-<!-- 					</h:selectOneRadio> -->
-<!-- 		        	<h:message for="pet-wild" style="color: red"/>              -->
-<!-- 		        </td> -->
-<!-- 	     	</tr> -->
+	     	<tr>
+		        <td>
+					<h:outputLabel for="pet-breed">Pet Breed</h:outputLabel>
+				</td>
+		        <td>
+		            <h:inputText label="Pet Breed"
+		                         id="pet-breed"
+		                         value="#{petbean.dto.breed}"
+		                         required="true"/>
+		            <h:message for="pet-breed" style="color: red"/>
+		        </td>
+     		</tr>	     		
+	     	<tr>
+		        <td>
+		        	<h:outputLabel for="pet-old">Pet Old</h:outputLabel>
+		        </td>
+		        <td>
+		            <h:inputText label="Pet old"
+		                         id="pet-old"
+		                         value="#{petbean.dto.old}"
+		                         required="true"/>
+		            <h:message for="pet-old" style="color: red"/>
+		        </td>
+	     	</tr>	     		
+	     	<tr>
+		        <td>
+					<h:outputLabel for="pet-wild">Pet Wild</h:outputLabel>
+				</td>
+		        <td>
+					<h:selectOneRadio label="Wild"
+		                              id="pet-wild"
+                                      value="#{petbean.dto.wild}"
+		                              required="true">
+						<f:selectItem itemLabel="Domestic" itemValue="domestic" />
+						<f:selectItem itemLabel="Wild" itemValue="wild" />
+					</h:selectOneRadio>
+		        	<h:message for="pet-wild" style="color: red"/>             
+		        </td>
+	     	</tr>
    		</table>
+   		<h:commandButton value="Save" action="#{petbean.createPet}" />
     </h:form> 
 </h:body>
 </html>

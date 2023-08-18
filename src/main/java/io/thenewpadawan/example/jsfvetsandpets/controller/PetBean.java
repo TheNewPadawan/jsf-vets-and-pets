@@ -22,25 +22,33 @@ import lombok.Setter;
 @Setter
 public class PetBean implements Serializable{
 	private static final long serialVersionUID = -4946871615482319785L;
+	
 	private String petBeanTest = "petBeanTest";
 	private PetDTO dto = new PetDTO();
-//	private String name;
-//	private String breed;
-//	private Integer old;
-//	private Boolean wild;
 	
 	public PetBean() {
 		Pet pet = new Pet("alan", "cane", 0, true);
 		petBeanTest = PetMapper.INSTANCE.entity(pet).toString();
-//		FacesContext context = FacesContext.getCurrentInstance();
 	}
 	
-	public void createPet() {
+	public String createPet() {
 		FacesContext context = FacesContext.getCurrentInstance();
-//		FacesMessage msg1 = new FacesMessage(FacesMessage.SEVERITY_INFO, "Employee Information is stored Successfully.", "Success detail");
-//		FacesMessage msg2 = new FacesMessage(FacesMessage.SEVERITY_ERROR, dto.toString(), "name detail");
-//		context.addMessage(null, msg1);
-//		context.addMessage(null, msg2);
-		dto.setName("stocazzo");
+		boolean success = true;
+		if (!PetDTO.NAME_PATTERN.matcher(dto.getName()).find()) {
+			FacesMessage msgName = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Il nome deve avere almeno 2 caratteri e massimo 45", dto.getName());
+			context.addMessage(null, msgName);
+			success = false;
+		}
+		if (!PetDTO.BREED_PATTERN.matcher(dto.getBreed()).find()) {
+			FacesMessage msgBreed = new FacesMessage(FacesMessage.SEVERITY_ERROR, "La razza deve avere almeno 6 caratteri e massimo 45", dto.getName());
+			context.addMessage(null, msgBreed);
+			success = false;
+		}
+		if (dto.getOld() < 0) {
+			FacesMessage msgOld = new FacesMessage(FacesMessage.SEVERITY_ERROR, "Cosa hai fatto a questo animale?!", dto.getOld().toString());
+			context.addMessage(null, msgOld);
+			success = false;
+		}
+		return success ? "pet-create-success" : null;
 	}
 }

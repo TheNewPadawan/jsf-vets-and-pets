@@ -1,6 +1,7 @@
 package io.thenewpadawan.example.jsfvetsandpets.repository;
 
-public interface PetRepository {
+import io.thenewpadawan.example.jsfvetsandpets.entity.PetEntity;
 
-	//public void save();
+public interface PetRepository extends GenericRepository<PetEntity> {
+   
 }
